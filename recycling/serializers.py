@@ -8,8 +8,20 @@ class DepositSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ['reward_points', 'timestamp', 'user']
 
+    def validate_weight(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("Weight must be greater than zero.")
+        if value > 1000:  # optional sanity limit
+            raise serializers.ValidationError("Weight seems too high. Please check again.")
+        return value
+
+    def validate_material_type(self, value):
+        allowed_types = ['plastic', 'metal', 'glass']  # adjust to match your model
+        if value.lower() not in allowed_types:
+            raise serializers.ValidationError(f"Material type must be one of: {', '.join(allowed_types)}.")
+        return value.lower()
+
     def create(self, validated_data):
-        # Automatically associate the logged-in user
         validated_data['user'] = self.context['request'].user
         return super().create(validated_data)
 
