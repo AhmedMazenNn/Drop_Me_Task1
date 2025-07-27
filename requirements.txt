@@ -1,0 +1,14 @@
+# Django Core 
+Django==5.2.4
+asgiref==3.9.1
+django-cors-headers==3.13.0
+django-environ==0.12.0
+psycopg2-binary==2.9.10  # latest version from your friend's file
+Pillow==10.4.0
+sqlparse==0.5.3
+
+# Django REST Framework and Tools
+djangorestframework==3.16.0  # newer version wins
+drf-spectacular==0.27.2
+djangorestframework_simplejwt==5.5.1
+PyJWT==2.10.1
