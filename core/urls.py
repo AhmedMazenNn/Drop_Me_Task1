@@ -14,6 +14,9 @@ urlpatterns = [
 
     # Auth App URLs
     path('api/auth/', include('accounts.urls')),
+    
+    # Recycling App URLs
+    path('api/recycling/', include('recycling.urls')),
 
     # API Documentation (Swagger / Redoc)
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
