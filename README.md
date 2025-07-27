@@ -1,38 +1,93 @@
-# ♻️ RVM Deposit & Rewards API
-
-This project is a secure, token-authenticated Django REST API that allows users to log recyclable material deposits and automatically earn reward points based on material type.
-
----
+# 🧱 Project Workflow – RVM Rewards API Git Branching & Collaboration Guide
 
 ## 🚀 Overview
 
-As part of Drop Me’s Backend Internship Challenge, this API reflects a real-world component of our AI-driven Recycling Vending Machine (RVM) platform. Users can:
+This project is part of **Drop Me’s Backend Internship Challenge** and represents a real-world component of our AI-powered Recycling Vending Machine (RVM) platform.
 
-- Register/login with secure token-based authentication.
-- Submit recyclable material deposits with weight, type, and machine ID.
-- Earn reward points automatically (based on material type).
-- View their total recycled weight and accumulated reward points.
-
----
-
-## 🏗️ Project Structure & Workflow
-
-- The project uses a **modular app structure**, with at least two Django apps:
-  - `users`: Handles registration, login, and authentication
-  - `recycling`: Manages deposits and reward calculation
-
-- ✅ **Branching Strategy**
-  - `main`: Stable, production-ready code
-  - `dev`: Integration and testing branch
-  - `feature/<name>`: Feature development (e.g., `feature/deposit-endpoint`, `feature/swagger-setup`)
-
-This separation ensures clean development → testing → production workflows.
+### ✅ Features
+- Secure registration and login using JWT authentication.
+- Submit recyclable deposits (type, weight, machine).
+- Auto-calculation of reward points based on material type.
+- View total weight and reward points.
+- Admin panel access for managing data.
 
 ---
 
-## 📦 How to Run the Project Locally
+## 🧠 ERD (Entity Relationship Diagram)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/AhmedMazenNn/Drop_Me_Task1.git
-cd core
+![ERD](https://drive.google.com/file/d/1GclhE5OXK53lCJrV0S4ggRoeJKZyokdx/view?usp=sharing)
+
+---
+
+## 📚 API Documentation
+
+After running the server, view all API endpoints at:
+
+👉 [`http://127.0.0.1:8000/api/docs/`](http://127.0.0.1:8000/api/docs/)
+
+---
+
+## 🗂 Branching Strategy
+
+| Branch       | Purpose                                |
+| ------------ | -------------------------------------- |
+| `main`       | Stable, production-ready code          |
+| `dev`        | Integration branch for tested features |
+| `feature/*`  | New features                           |
+
+---
+
+## 📦 Required Software
+
+- Python 3.11
+- PostgreSQL 15
+- Git
+
+---
+
+## 🚀 Getting Started (First Time Setup)
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/AhmedMazenNn/Drop_Me_Task1.git
+   cd Drop_Me_Task1
+   ```
+2. **Check remote info**:
+
+   ```bash
+   git remote -v
+   ```
+
+3. **Create a virtual environment**:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+4. **Install dependencies (if applicable)**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Set environment variables**:
+
+   ```bash
+   DEBUG=True
+   SECRET_KEY='your-secret-key-here'
+   DATABASE_URL='postgres://your_db_user:your_db_password@localhost:5432/your_db_name'
+   ```
+
+6. run migrations :
+
+   ```bash
+   python manage.py migrate
+   ```
+
+7. run the server :
+
+   ```bash
+   python manage.py runserver
+   ```
