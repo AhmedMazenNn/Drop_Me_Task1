@@ -15,7 +15,7 @@ This project is part of **Drop Me’s Backend Internship Challenge** and represe
 
 ## 🧠 ERD (Entity Relationship Diagram)
 
-![ERD](https://drive.google.com/file/d/1GclhE5OXK53lCJrV0S4ggRoeJKZyokdx/view?usp=sharing)
+![`ERD`](https://drive.google.com/file/d/1GclhE5OXK53lCJrV0S4ggRoeJKZyokdx/view?usp=sharing)
 
 ---
 
